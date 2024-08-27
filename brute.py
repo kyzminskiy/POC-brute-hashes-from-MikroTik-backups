@@ -158,9 +158,7 @@ def main():
         for password in passwords:
             password = password.strip()
             i = gen_password_validator_priv(username, password, salt)
-            print('priv:', i.hex())
             x_gamma = gen_public_key(i)
-            print('pub:', x_gamma.hex())
 
             if x_gamma == v:
                 results.append(f"{line.strip()}:{password}\n")
